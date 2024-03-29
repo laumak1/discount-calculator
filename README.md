@@ -38,9 +38,9 @@ Shipping price depends on package size and a provider:
 
 
 First, you have to implement such rules:
-All S shipments should always match the lowest S package price among the providers.
-The third L shipment via LP should be free, but only once a calendar month.
-Accumulated discounts cannot exceed 10 € in a calendar month. If there are not enough funds to fully cover a discount this calendar month, it should be covered partially.
+- All S shipments should always match the lowest S package price among the providers.
+- The third L shipment via LP should be free, but only once a calendar month.
+- Accumulated discounts cannot exceed 10 € in a calendar month. If there are not enough funds to fully cover a discount this calendar month, it should be covered partially.
 
 Your design should be flexible enough to allow adding new rules and modifying existing ones easily.
 
@@ -57,9 +57,9 @@ Your program should output transactions and append reduced shipment price and a 
 2015-02-03 L LP 6.90 -
 
 # Requirements
-Using additional libraries is prohibited. That constraint is not applied for unit tests and build.
-There should be an easy way to start the solution and tests.
-A short documentation of design decisions and assumptions can be provided in the code itself.
-Make sure your input data is loaded from a file (default name 'input.txt' is assumed)
-Make sure your solution outputs data to the screen (STDOUT) in a format described below
-Your design should be flexible enough to allow adding new rules and modifying existing ones easily
+- Using additional libraries is prohibited. That constraint is not applied for unit tests and build.
+- There should be an easy way to start the solution and tests.
+- A short documentation of design decisions and assumptions can be provided in the code itself.
+- Make sure your input data is loaded from a file (default name 'input.txt' is assumed)
+- Make sure your solution outputs data to the screen (STDOUT) in a format described below
+- Your design should be flexible enough to allow adding new rules and modifying existing ones easily
