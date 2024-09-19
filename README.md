@@ -1,24 +1,41 @@
 This program calculates shipments discount and price based on input data.
 
-# Running the Discount Calculator
-This program can be executed in two ways: using Docker or locally.
+## 1. Running the Discount Calculator locally:
+python main.py
 
-## Using Docker:
-### 1. Build Docker image:
-docker build -t discount-calculator .
-### 2. Run the calculator:
-docker run --rm discount-calculator
-### 3. (Optional) Run calculator tests
-docker run --rm discount-calculator python -m unittest test_calculator
-
-## Locally:
-### 1. Run calculator:
-python discount_calculator.py
-### 2. (Optional) Run calculator tests
+## 2. (Optional) Run calculator tests
 python -m unittest test_calculator
+
 
 # About program
 The program is developed with a focus on writing clean and maintainable code, following the PEP8 standard for Python code formatting. It utilizes the Strategy design pattern to implement discount rules, ensuring separation of concerns and easy addition or removal of rules. This architectural choice is demonstrated in the program's tests, where different rules can be isolated or combined easily.
+
+# About modules
+### main.py
+This is the entry point of the application. The module is responsible for:
+- Reading the input data (e.g., shipment information) from a file or other sources.
+- Initializing the ShipmentCalculator and applying the discount rules.
+- Displaying or outputting the final calculated prices and discounts for each shipment.
+
+### calculator.py
+This module contains the core logic of the discount calculation.
+
+### startegies.py
+This module contains all the discount strategies implemented in the program. Each strategy class extends the DiscountStrategy abstract class and implements its unique discount rule.
+
+### shipment.py
+This module encapsulates the Shipment class, which represents a shipment's characteristics (size, provider, and date).
+
+### config.py
+Module is used for defining configuration settings that might be used across the application.
+
+### test_calculator.py
+This module contains unit tests for the discount calculator.
+
+
+# Final Notes:
+- Modularity: Each module is designed to handle specific responsibilities, ensuring the codebase is modular, easy to understand, and maintain.
+- Extensibility: The use of the Strategy pattern allows for easy extension of the discount rules without modifying the existing codebase, adhering to the Open/Closed Principle.
 
 # Task:
 Each item, depending on its size gets an appropriate package size assigned to it:
