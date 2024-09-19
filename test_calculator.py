@@ -1,7 +1,8 @@
 import unittest
-from discount_calculator import (
-    Shipment,
-    ShipmentCalculator,
+from config import MONTHLY_DISCOUNT_LIMIT
+from shipment import Shipment
+from calculator import ShipmentCalculator
+from strategies import (
     MonthlyDiscountLimit,
     SmallShipmentDiscount,
     ThirdLargeLPShipmentDiscount,
@@ -88,7 +89,7 @@ class TestShipmentCalculator(unittest.TestCase):
             shipment = Shipment("S", "MR", "2024-03-01")
             price, discount = self.calculator.calculate_shipment_price_and_discount(shipment)
             total_discount += discount
-        self.assertEqual(total_discount, MonthlyDiscountLimit.MONTHLY_DISCOUNT_LIMIT)
+        self.assertEqual(total_discount, MONTHLY_DISCOUNT_LIMIT)
 
         # Beyond the discount limit, no more discounts should be applied
         shipment = Shipment("S", "MR", "2024-03-01")
