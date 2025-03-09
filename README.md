@@ -22,6 +22,7 @@ This module contains the core logic of the discount calculation.
 
 ### discount_rules.py
 This module contains all the discount rules implemented in the program. Each rule class extends the DiscountRule abstract class and implements its unique discount rule. The implementation follows the Strategy Design Pattern, which allows different discount strategies to be defined as separate classes. This pattern enables the ShipmentCalculator to dynamically choose and apply various discount strategies interchangeably, based on the requirements of the shipment.
+
 The Strategy Design Pattern decouples the discount logic from the main code, allowing for flexibility in applying different discount rules without modifying the context (ShipmentCalculator). Each discount strategy class can implement its own logic for calculating the discount, making it easy to add or modify discount rules in the future.
 
 ### shipment.py
